@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+}
+
+body{
+    text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
+    background: linear-gradient(to bottom, #6ab7f5, #fff); /* Fundo com gradiente */
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura da janela */
+}
+
+/* Contêiner principal que contém todos os elementos */
+.main {
+    position: relative; /* Define um contexto de posicionamento para elementos filhos */
+    max-width: 425px; /* Limita a largura máxima para que o layout seja responsivo */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+}
+
+/* Estilo da imagem da Pokédex */
+.pokedex {
+    width: 100%; /* Faz a imagem ocupar toda a largura do contêiner principal */
+}
+
+/* Estilo da imagem do Pokémon */
+.pokemon_image {
+    position: absolute; /* Posicionamento absoluto dentro do contêiner principal */
+    bottom: 55%; /* Posiciona a imagem 54% a partir da parte inferior do contêiner principal */
+    left: 50%; /* Centraliza horizontalmente com base no contêiner principal */
+    transform: translate(-63%, 20%); /* Ajusta a posição para garantir centralização */
+    height: 18%; /* Define a altura da imagem como 18% da altura do contêiner principal */
+}
+
+/* Estilo dos dados do Pokémon (número e nome) */
+.pokemon_data {
+    position: absolute; /* Posicionamento absoluto dentro do contêiner principal */
+    font-weight: 600; /* Define a espessura da fonte */
+    color: #aaa; /* Cor do texto */
+    top: 54.5%; /* Posiciona o texto 54.5% a partir da parte superior do contêiner principal */
+    right: 27%; /* Alinha o texto 27% a partir da borda direita do contêiner principal */
+    font-size: 25px; /* Tamanho fixo da fonte */
+}
+
+/* Estilo do nome do Pokémon */
+.pokemon_name {
+    color: #3a444d; /* Cor do nome do Pokémon */
+    text-transform: capitalize; /* Primeira letra em maiúsculo */
+}
+
+/* Estilo do formulário de busca */
+.form {
+    position: absolute; /* Posicionamento absoluto dentro do contêiner principal */
+    width: 65%; /* Largura do formulário como 65% do contêiner principal */
+    top: 65%; /* Posiciona o formulário 65% a partir da parte superior do contêiner principal */
+    left: 13.5%; /* Alinha o formulário 13.5% a partir da borda esquerda do contêiner principal */
+}
+
+/* Estilo do campo de busca */
+.input_search {
+    width: 100%; /* O campo de busca ocupa 100% da largura do formulário */
+    padding: 4%; /* Espaçamento interno para aumentar a área clicável */
+    outline: none; /* Remove a borda padrão do campo de input */
+    border: 2px solid #333; /* Adiciona uma borda preta */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-weight: 600; /* Define a espessura da fonte */
+    color: #3a444d; /* Cor do texto */
+    font-size: 16px; /* Tamanho fixo da fonte */
+    box-shadow: -3px 4px 0 #888, -5px 7px 0 #333; /* Efeito de sombra para dar profundidade */
+}
+
+/* Estilo do contêiner dos botões de navegação */
+.buttons {
+    position: absolute; /* Posicionamento absoluto dentro do contêiner principal */
+    bottom: 10%; /* Posiciona o contêiner 10% a partir da parte inferior do contêiner principal */
+    left: 50%; /* Centraliza horizontalmente com base no contêiner principal */
+    width: 65%; /* Largura do contêiner como 65% do contêiner principal */
+    transform: translateX(-57%); /* Ajusta a posição para garantir centralização */
+    display: flex; /* Flexbox para organizar os botões lado a lado */
+    gap: 20px; /* Espaçamento entre os botões */
+}
+
+/* Estilo dos botões */
+.button {
+    flex: 1; /* Faz os botões ocuparem proporções iguais dentro do contêiner */
+    padding: 4%; /* Espaçamento interno para aumentar a área clicável */
+    border: 2px solid #000; /* Borda preta */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho fixo da fonte */
+    font-weight: 600; /* Define a espessura da fonte */
+    color: white; /* Cor do texto branco */
+    background: #444; /* Cor de fundo cinza escuro */
+    box-shadow: -2px 3px 0 #222, -4px 6px 0 #000; /* Efeito de sombra para dar profundidade */
+}
+
+/* Efeito de clique nos botões */
+.button:active {
+    box-shadow: inset -4px 4px 0 #222; /* Efeito de profundidade invertido para simular um clique */
+    font-size: 15px; /* Reduz ligeiramente o tamanho da fonte ao clicar */
+}
+
+/* 
+    EXPLICAÇÃO: POR QUE AGORA FUNCIONOU?
+
+    Na versão anterior do código, alguns problemas de posicionamento estavam fazendo com que os elementos (como a data do Pokémon, 
+    o campo de busca e os botões) saíssem da área da Pokédex quando a tela fosse redimensionada.
+
+    1. **Uso de `position: absolute`:**
+        - No código anterior, o `position: absolute` estava sendo usado, mas os valores de `top`, `right`, `left`, e `transform` não 
+          estavam corretamente centralizados ou alinhados em relação à Pokédex. 
+        - Quando você usa `position: absolute`, o elemento é posicionado em relação ao seu elemento pai com `position: relative` 
+          (neste caso, `.main`). Se os valores de `left`, `right`, `top`, ou `bottom` não forem bem calculados, o elemento pode sair 
+          do lugar quando a tela mudar de tamanho.
+
+    2. **Centralização com `transform`:**
+        - Usamos `left: 50%` e `transform: translateX(-50%)` para centralizar elementos horizontalmente. Isso funciona porque `left: 50%` 
+          move o elemento 50% a partir da borda esquerda do seu contêiner pai, e o `transform: translateX(-50%)` traz o elemento de volta 
+          para o centro, movendo-o 50% para a esquerda.
+
+    3. **Flexbox para os Botões:**
+        - No código anterior, os botões poderiam ter problemas de alinhamento e largura fixa, o que causava a saída dos botões da Pokédex.
+        - Usando `display: flex` e `flex: 1` para os botões, conseguimos garantir que eles ocupem o mesmo espaço disponível e permaneçam 
+          alinhados dentro da Pokédex, mesmo que o tamanho da tela mude.
+
+    Mantivemos os valores exatos, evitando arredondamento, o que ajudou a garantir que os elementos ficassem precisamente onde eram esperados,
+    o que é especialmente importante em layouts como este, onde a precisão do design é crítica.
+*/
