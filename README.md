@@ -1,21 +1,21 @@
-# Pokédex Web App 
+# Pokédex Web App 🕵️‍♂️✨
 
-O **Pokédex Web App** é uma aplicação simples que permite buscar informações sobre Pokémon, como nome, número e imagem animada, utilizando a [PokéAPI](https://pokeapi.co/). Desenvolvido com HTML, CSS e JavaScript, o projeto é responsivo e oferece uma interface intuitiva para explorar o mundo dos Pokémon.
+O **Pokédex Web App** é uma aplicação interativa que permite buscar informações sobre Pokémon utilizando a [PokéAPI](https://pokeapi.co/). Desenvolvido com HTML, CSS e JavaScript, este projeto demonstra como integrar uma API externa para obter e exibir dados dinamicamente. A aplicação mostra o nome, número e imagem animada do Pokémon pesquisado, com uma interface responsiva e fácil de usar.
 
-## Funcionalidades
+## Funcionalidades 🌟
 
-- **Busca de Pokémon**: Procure por Pokémon pelo nome ou número.
+- **Busca de Pokémon**: Procure Pokémon pelo nome ou número, consultando a PokéAPI para obter dados atualizados.
 - **Informações Exibidas**: Mostra o nome, número e imagem animada do Pokémon.
-- **Interface Responsiva**: Funciona bem em dispositivos móveis e desktops.
+- **Interface Responsiva**: Adapta-se a diferentes dispositivos, garantindo uma boa experiência em móveis e desktops.
 
-## Tecnologias
+## Tecnologias 🛠️
 
 - **HTML**: Estrutura da página.
 - **CSS**: Estilização e layout.
-- **JavaScript**: Manipulação do DOM e integração com a API.
-- **[PokéAPI](https://pokeapi.co/)**: Fonte de dados sobre Pokémon.
+- **JavaScript**: Manipulação do DOM e integração com a [PokéAPI](https://pokeapi.co/).
+- **[PokéAPI](https://pokeapi.co/)**: API utilizada para buscar informações sobre Pokémon.
 
-## Como Usar
+## Como Usar 🚀
 
 1. Clone o repositório:
    ```bash
