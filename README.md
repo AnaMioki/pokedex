@@ -20,3 +20,7 @@ O **Pokédex Web App** é uma aplicação interativa que permite buscar informa�
 1. Clone o repositório:
    ```bash
    git clone https://github.com/seu-usuario/nome-do-repositorio.git
+
+## Captura de Tela 📸
+![image](https://github.com/user-attachments/assets/04b940c0-6d7c-4830-8eac-a6d552b76d0f)
+
